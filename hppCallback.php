@@ -4,9 +4,8 @@
 
 include  'backend.php';
 
-if($_GET["paymentStatus"] == "SUCCESS"){
 $queryString = "";
-$secret = $order->iframeSecret;
+$secret = $order->HPPSecret;
 
 foreach ($_GET as $key => $value) { 
     if($key == "signature" || $key== "mode"){
@@ -19,10 +18,9 @@ $queryString = ltrim($queryString, $queryString[0]);
 $signature = hash_hmac( 'sha256' , $queryString , $secret ,false);
 
 if($signature == $_GET["signature"]){
-    echo "Success";
+    echo "Success signature";
 }else{
-    echo "Failed validation";
-}
+    echo "Failed signature";
 }
 ?>
 

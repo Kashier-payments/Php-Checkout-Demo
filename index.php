@@ -49,7 +49,7 @@ data-orderId="<?php echo $order->merchantOrderId ?>"
 
 data-merchantId="<?php echo $order->mid ?>"
 
-data-merchantRedirect="http://localhost/phpIFrame/callback.php"
+data-merchantRedirect="http://localhost/phpIFrame/iFrameCallback.php"
 
 data-store = "Qassat"
 

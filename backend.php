@@ -58,7 +58,7 @@ $hash = generateKashierOrderHash($order);
 $order->secret = $order->HPPSecret;
 $hppHash = generateKashierOrderHash($order);
 
-$callbackUrl = urlencode('http://google.com');
+$callbackUrl = urlencode('http://localhost/phpIFrame/hppCallback.php');
 
 $hppUrl = $order->baseUrl."/payment?mid=".$order->mid."&orderId=".$order->merchantOrderId."&amount=".$order->amount."&currency=".$order->currency."&hash=".$hppHash."&merchantRedirect=".$callbackUrl;
 
