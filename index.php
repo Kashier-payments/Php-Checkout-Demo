@@ -8,7 +8,26 @@ include  'backend.php';
 
 <html>
 
-​
+<head>
+<script>
+  function responseCallBack(e){ 
+  if(e.data.message== "success"){
+      console.log("Success payment", e.data )
+  }else if(e.data.message == "failure"){
+      console.log("Failure payment", e.data )
+  }else{
+      console.log("Other Actions", e.data )
+  }
+}
+     if (window.addEventListener) {
+       console.log("if");
+       addEventListener("message", responseCallBack, false)
+   } else {
+    console.log("else");     
+       attachEvent("onmessage", responseCallBack)
+   }
+</script>
+</head>​
 
 <body>
 

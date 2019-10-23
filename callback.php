@@ -4,6 +4,7 @@
 
 include  'backend.php';
 
+if($_GET["paymentStatus"] == "SUCCESS"){
 $queryString = "";
 $secret = $order->iframeSecret;
 
@@ -22,6 +23,6 @@ if($signature == $_GET["signature"]){
 }else{
     echo "Failed validation";
 }
-
+}
 ?>
 

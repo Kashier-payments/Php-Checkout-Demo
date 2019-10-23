@@ -32,7 +32,6 @@ class Order{
 		$this->baseUrl = $config["baseUrl"];
 		$this->merchantOrderId = time();
 	}
-
 }
 
 
