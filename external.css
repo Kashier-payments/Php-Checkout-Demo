@@ -2,7 +2,9 @@
  .modal-content.main-cont {background: #F0F4F7 !important;}
  .button-ui-style-secondary {background-color: transparent !important;}
  .pay-option { background-color: #F0F4F7 !important;}
-
+button#paymentBtn {
+    background-color: beige !important;
+}
  .form-control { background-color: transparent !important;}
  .form-control:focus { background-color: transparent !important;}
     .QRCode{
