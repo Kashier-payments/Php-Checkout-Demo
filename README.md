@@ -1,6 +1,16 @@
 # Php-Checkout-Demo
 Create and pay orders through IFrame (Same page payment kashier popup) or Hosted Payment Page (Payment redirection).
 
+#### Running the demo
+
+- Clone the github project `git@github.com:Kashier-payments/Php-Checkout-Demo.git`
+
+- On your cloned project root `run php -S localhost:8000` if you are using php Built-in web server
+
+- Navigate to `localhost:8000` to make sure things are working.
+
+- Begin configuring your merchant.
+
 #### Obtain MID
 
 - To begin testing on your account you need to update your config.php -> live-test credentials
@@ -26,14 +36,6 @@ Create and pay orders through IFrame (Same page payment kashier popup) or Hosted
 - Generate a new api key with your prefered name that describes your payment channel, there is 1 default api key you could use that is created when signing up.
 
 - Copy and paste your API key in `config.php` -> `"live-test" -> HPPSecret`
-
-#### Running the demo
-
-- Clone the github project `git@github.com:Kashier-payments/Php-Checkout-Demo.git`
-
-- On your cloned project root `run php -S localhost:8000` if you are using php Built-in web server
-
-- Navigate to localhost:8000
 
 
 #### Setting your payment callback & signature calculation
