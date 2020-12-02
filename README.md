@@ -38,7 +38,7 @@ Create and pay orders through IFrame (Same page payment kashier popup) or Hosted
 
 #### Setting your payment callback & signature calculation
 
-- Every payment callback comes with a signature key, you should be chcking aganst it using the used api key. `iFrameCallback.php` / `hppCallback.php` should have the code needed to verify the integrity of kashier transactions callback, we dont want any one to hack his way to your callback url and begin faking payments on your order.
+- Every payment callback comes with a signature key, you should be chcking against it using the used api key. `iFrameCallback.php` / `hppCallback.php` should have the code needed to verify the integrity of kashier transactions callback, we dont want any one to hack his way to your callback url and begin faking payments on your order.
 
 - IFrame Callback URL should be set on `data-merchantRedirect` variable in `index.php` and should be referring to your running server.
 
