@@ -1,6 +1,5 @@
 # Php-Checkout-Demo
-Create and pay orders through IFrame (Same page payment kashier popup) or Hosted Payment Page (Payment redirection) 
-
+Create and pay orders through IFrame (Same page payment kashier popup) or Hosted Payment Page (Payment redirection).
 
 #### Obtain MID
 
@@ -28,8 +27,9 @@ Create and pay orders through IFrame (Same page payment kashier popup) or Hosted
 
 - Copy and paste your API key in `config.php` -> `"live-test" -> HPPSecret`
 
-
 #### Running the demo
+
+- Clone the github project `git@github.com:Kashier-payments/Php-Checkout-Demo.git`
 
 - On your cloned project root `run php -S localhost:8000` if you are using php Built-in web server
 
