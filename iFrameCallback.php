@@ -6,7 +6,7 @@ include  'backend.php';
 
 if($_GET["paymentStatus"] == "SUCCESS"){
 $queryString = "";
-$secret = $order->iframeSecret;
+$secret = $order->secret;
 
 foreach ($_GET as $key => $value) { 
     if($key == "signature" || $key== "mode"){

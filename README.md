@@ -1,9 +1,10 @@
 # Php-Checkout-Demo
-Create and pay orders through IFrame (Same page payment kashier popup) or Hosted Payment Page (Payment redirection).
+
+Create and pay orders through PaymentUI IFrame (Same page payment kashier popup) or Hosted Payment Page (Payment redirection).
 
 #### Running the demo
 
-- Clone the github project `git@github.com:Kashier-payments/Php-Checkout-Demo.git`
+- Clone the github project `git@github.com:Kashier-payments/Php-PaymentUI-demo.git`
 
 - On your cloned project root `run php -S localhost:8000` if you are using php Built-in web server
 
@@ -17,26 +18,22 @@ Create and pay orders through IFrame (Same page payment kashier popup) or Hosted
 
 - Login or Sign up on kashier.io https://merchant.kashier.io/
 
-- Copy Merchant ID visible under your user name "MID-xx-xx" in `config.php` -> `"live-test" -> mid`
+- Copy Merchant ID visible under your user name "MID-xx-xx" in `config.php` -> `"test" -> mid`
 
 
-#### Obtain Test IFrame Credentials
+#### Obtain Test API Key Credentials
 
-- In merchant portal, navigate to Integrate now section > IFrame API Keys.
-
-- Generate a new api key with your prefered name that describes your payment channel, there is 1 default api key you could use that is created when signing up.
-
-- Copy and paste your API key in `config.php` -> `"live-test" -> iFrameSecret `
-
-
-#### Obtain Test Hosted Payment Page (HPP) Credentials
-
-- In merchant portal, navigate to Integrate now section > Hosted payment page API Keys.
+- In merchant portal, navigate to Integrate now section > Payment Api Keys.
 
 - Generate a new api key with your prefered name that describes your payment channel, there is 1 default api key you could use that is created when signing up.
 
-- Copy and paste your API key in `config.php` -> `"live-test" -> HPPSecret`
+- Copy and paste your API key in `config.php` -> `"test" -> apiKey `
 
+
+#### Setting Your Payment Method 
+
+- you can select your payment method by setting on `allowedMethods` variable in `backend.php` 
+- Add the following options separated by comma remove or leave empty for all allowed methods. `allowedMethods="card,wallet,bank_installments"`
 
 #### Setting your payment callback & signature calculation
 
@@ -64,9 +61,9 @@ Create and pay orders through IFrame (Same page payment kashier popup) or Hosted
 
 - Make sure you are on Live mode on merchant portal 
 
-- If you are still on the php demo you should paste the credentials to `config.php` -> `"live-live"` array
+- If you are still on the php demo you should paste the credentials to `config.php` -> `"live"` array
 
-- Change your mode to `config.php` -> `"mode" => "live-live"`.
+- Change your mode to `config.php` -> `"mode" => "live"`.
 
 - Rerun the project !
 
