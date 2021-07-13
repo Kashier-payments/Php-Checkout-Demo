@@ -1,16 +1,14 @@
 <?php
 return array(
-    "mode" => "live-test",
-    "live-live" => array(
-        baseUrl => "https://iframe.kashier.io",
-        iFrameSecret => "",
-        HPPSecret =>"",        
-        mid => ""
+    "mode" => "test",
+    "live" => array(
+        "baseUrl" => "https://checkout.kashier.io",
+        "apikey" => "",
+         "mid" => ""
     ),
-    "live-test" => array(
-        baseUrl => "https://test-iframe.kashier.io",
-        iFrameSecret => "c1b1515e-dfb3-4c10-8362-23e5b8df4cff",
-        HPPSecret => "46a42c88-ff18-4810-a60b-02ad142ac23a",        
-        mid => "MID-437-890"
+    "test" => array(
+        "baseUrl" => "https://checkout.kashier.io",
+        "apikey" => "49c02cfa-8a4e-4120-8aa2-b154a6d08573",        
+        "mid" => "MID-3552-454"
     )
 );

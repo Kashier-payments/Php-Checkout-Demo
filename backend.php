@@ -3,6 +3,7 @@
 <?php 
 
 $config = include("config.php");
+
 $configObj = $config[$config['mode']];
 
 class Order{
@@ -10,24 +11,22 @@ class Order{
 
 	public $amount = "20";
 
-	public $currency = "USD";
+	public $currency = "EGP";
 
 	public $merchantOrderId = "";
 
 	public $mid = "";
 
 	public $secret = "";
-
-	public $iframeSecret = "";
-
-	public $HPPSecret = "";
 	
-	public $baseUrl = "";
+	public $baseUrl = '';
+
+	public $mode = "";
+
+	public $allowedMethods = "card,wallet,bank_installments";
 
 	function __construct($config){
-		$this->secret = $config["iFrameSecret"];
-		$this->iframeSecret = $config["iFrameSecret"];		
-		$this->HPPSecret = $config["HPPSecret"];
+		$this->secret = $config["apikey"];
 		$this->mid = $config["mid"];
 		$this->baseUrl = $config["baseUrl"];
 		$this->merchantOrderId = time();
@@ -37,31 +36,30 @@ class Order{
 
 function generateKashierOrderHash($order){
 
-$mid = $order->mid; 
+	$mid = $order->mid; 
 
-$amount = $order->amount; 
+	$amount = $order->amount; 
 
-$currency = $order->currency; 
+	$currency = $order->currency; 
 
-$orderId = $order->merchantOrderId;
+	$orderId = $order->merchantOrderId;
 
-$secret = $order->secret;
+	$secret = $order->secret;
 
-$path = "/?payment=".$mid.".".$orderId.".".$amount.".".$currency;
-return hash_hmac( 'sha256' , $path , $secret ,false);
+	$path = "/?payment=".$mid.".".$orderId.".".$amount.".".$currency;
+	return hash_hmac( 'sha256' , $path , $secret ,false);
 }
+
 
 $order = new Order($configObj);
 
+$order->mode = $config['mode'];
+
 $hash = generateKashierOrderHash($order);
 
-$order->secret = $order->HPPSecret;
-$hppHash = generateKashierOrderHash($order);
+$callbackUrl = urlencode('http://localhost/Php-Checkout-Demo/hppCallback.php');
 
-$callbackUrl = urlencode('http://localhost/phpIFrame/hppCallback.php');
-
-$hppUrl = $order->baseUrl."/payment?mid=".$order->mid."&orderId=".$order->merchantOrderId."&amount=".$order->amount."&currency=".$order->currency."&hash=".$hppHash."&merchantRedirect=".$callbackUrl;
-
+$hppUrl = $order->baseUrl."?merchantId=".$order->mid."&orderId=".$order->merchantOrderId."&mode=".$order->mode."&amount=".$order->amount."&currency=".$order->currency."&hash=".$hash."&merchantRedirect=".$callbackUrl."&allowedMethods=".$order->allowedMethods."&display=en";
 
 ?>
 

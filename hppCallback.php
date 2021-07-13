@@ -5,7 +5,7 @@
 include  'backend.php';
 
 $queryString = "";
-$secret = $order->HPPSecret;
+$secret = $order->secret;
 
 foreach ($_GET as $key => $value) { 
     if($key == "signature" || $key== "mode"){

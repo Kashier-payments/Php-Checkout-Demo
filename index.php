@@ -35,7 +35,7 @@ include  'backend.php';
 
 <script id="kashier-iFrame"
 
-src="<?php echo $order->baseUrl ?>/js/kashier-checkout.js"
+src="<?php echo $order->baseUrl ?>/kashier-checkout.js"
 
 data-amount="<?php echo $order->amount ?>"
 
@@ -49,7 +49,11 @@ data-orderId="<?php echo $order->merchantOrderId ?>"
 
 data-merchantId="<?php echo $order->mid ?>"
 
-data-merchantRedirect="http://localhost/phpIFrame/iFrameCallback.php"
+data-allowedMethods="<?php echo $order->allowedMethods ?>"
+
+data-merchantRedirect="http://localhost/Php-Checkout-Demo/iFrameCallback.php"
+
+data-mode="<?php echo $order->mode ?>"
 
 data-store = "Qassat"
 
